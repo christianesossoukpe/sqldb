@@ -83,3 +83,63 @@ DROP PRIMARY KEY;
 
 ALTER TABLE Persons
 DROP CONSTRAINT PK_Person;
+
+## Foreign keyal  declencheur
+primary key :parent
+foreign key : enfant
+ALTER TABLE user
+
+
+## SELECT
+SELECT est utilisée pour sélectionner des données dans une base de données.
+
+### les operateurs
+Operator	Description	Example
+=	Equal	
+>	Greater than	
+<	Less than	
+>=	Greater than or equal	
+<=	Less than or equal	
+<>	Not equal. Note: In some versions of SQL this operator may be written as !=	
+BETWEEN	Between a certain range	
+LIKE	Search for a pattern	
+IN	To specify multiple possible values for a column
+
+### suppression d'enregistrements
+DELETE FROM table_name WHERE condition;
+
+### mise à jour d'enregistrements
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+      ### paticulier
+      DELETE FROM lesson3 WHERE nom like  '%chrisbi';
+
+### limit
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
+specifier le nbre d'enregistrement à envoyer. 
+
+
+#### fonction
+min() et max()
+SELECT * 
+FROM lesson3
+WHERE age =(SELECT MIN(age) FROM lesson3 LIMIT 1);
+SELECT * 
+FROM lesson3
+WHERE age =(SELECT MAX(age) FROM lesson3 LIMIT 1);
+
+
+### valeur moyenne
+SELECT AVG(age)
+FROM lesson3
+WHERE condition;
+
+
+### somme
+SELECT SUM(age)
+FROM lesson3;
